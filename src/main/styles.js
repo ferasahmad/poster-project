@@ -4,12 +4,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
-  background-image: url("./background.svg");
+  background-image: url("./background-and-logo.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -2;
+  background-position: center;
+
   font-family: DaysOne;
 `;
 
@@ -17,14 +18,18 @@ export const Placeholder = styled.div`
   height: 100px;
 `;
 
-export const Image = styled.img`
-  height: 463px;
-  width: 679px;
-`;
-
 export const P = styled.p`
   font-size: 15px;
   margin: 36px 0;
+`;
+
+export const DescriptionAndButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 100px;
 `;
 
 export const Button = styled.button`
