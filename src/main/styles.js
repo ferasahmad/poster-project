@@ -10,6 +10,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -2;
+  font-family: DaysOne;
 `;
 
 export const ImageAndTitle = styled.div`
@@ -24,9 +25,9 @@ export const ImageAndTitle = styled.div`
 export const Title = styled.h1`
   font-weight: 400;
   font-size: 65px;
-  font-family: DaysOne;
   z-index: 2;
   text-shadow: 0px -4px 3px #ffffff;
+  letter-spacing: 0.02em;
   color: #8278b3;
   margin-top: 100px;
 `;
@@ -43,7 +44,6 @@ export const Image = styled.img`
 `;
 
 export const P = styled.p`
-  font-family: DaysOne;
   font-size: 15px;
   margin: 36px 0;
 `;
@@ -51,10 +51,12 @@ export const P = styled.p`
 export const Button = styled.button`
   font-size: 15px;
   font-family: DaysOne;
+  color: #7b61ff;
   height: 39px;
   width: 186px;
-  border: none;
+  border: 3px solid #ffffff;
   border-radius: 5px;
-  box-shadow: inset 0px 0px 11px 5px #a19bbb, inset 0px 0px 0px 4px #000000;
+  box-shadow: 0px 0px 8px 1px #7241ff;
   cursor: pointer;
+  background: transparent;
 `;
