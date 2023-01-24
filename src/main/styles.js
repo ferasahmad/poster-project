@@ -29,7 +29,7 @@ export const DescriptionAndButton = styled.div`
   align-items: center;
   justify-content: center;
   width: fit-content;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
 
 export const Button = styled.button`
