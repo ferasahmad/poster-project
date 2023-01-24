@@ -13,34 +13,13 @@ export const Container = styled.div`
   font-family: DaysOne;
 `;
 
-export const ImageAndTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 463px;
-`;
-
-export const Title = styled.h1`
-  font-weight: 400;
-  font-size: 65px;
-  z-index: 2;
-  text-shadow: 0px -4px 3px #ffffff;
-  letter-spacing: 0.02em;
-  color: #8278b3;
-  margin-top: 100px;
-`;
-
 export const Placeholder = styled.div`
   height: 100px;
 `;
 
 export const Image = styled.img`
-  position: absolute;
-  z-index: 1;
   height: 463px;
-  width: 463px;
+  width: 679px;
 `;
 
 export const P = styled.p`
