@@ -1,16 +1,16 @@
-import { Container, P, Button, DescriptionAndButton } from "./styles";
-import { Link } from "react-router-dom";
+import { Container, P, DescriptionAndSearch } from "./styles";
+import Search from "../components/search";
 
 const Main = () => {
   return (
     <Container>
       <div></div>
-      <DescriptionAndButton>
+      <div></div>
+      <div></div>
+      <DescriptionAndSearch>
         <P>Create a poster of your favorite artist!</P>
-        <Link to="/create">
-          <Button>GET STARTED</Button>
-        </Link>
-      </DescriptionAndButton>
+        <Search />
+      </DescriptionAndSearch>
     </Container>
   );
 };

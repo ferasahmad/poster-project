@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100%;
-  background-image: url("./background-and-logo.svg");
+  background-image: url("./background-updated.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -23,13 +23,12 @@ export const P = styled.p`
   margin: 36px 0;
 `;
 
-export const DescriptionAndButton = styled.div`
+export const DescriptionAndSearch = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: fit-content;
-  margin-bottom: 50px;
 `;
 
 export const Button = styled.button`

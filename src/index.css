@@ -4,6 +4,12 @@
     url("/public/fonts/DaysOne-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "DotGothic16";
+  src: local("DotGothic16"),
+    url("/public/fonts/DotGothic16-Regular.ttf") format("truetype");
+}
+
 body {
   color: white;
   background-color: black;
