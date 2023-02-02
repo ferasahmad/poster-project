@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-end;
   height: 100%;
   background-image: url("./background-updated.svg");
   background-repeat: no-repeat;
@@ -23,6 +22,9 @@ export const P = styled.p`
 `;
 
 export const DescriptionAndSearch = styled.div`
+  margin-bottom: 100px;
+  background: red;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;

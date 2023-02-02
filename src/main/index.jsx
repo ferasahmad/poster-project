@@ -4,9 +4,6 @@ import Search from "../components/search";
 const Main = () => {
   return (
     <Container>
-      <div />
-      <div />
-      <div />
       <DescriptionAndSearch>
         <P>Create a poster of your favorite artist!</P>
         <Search />
