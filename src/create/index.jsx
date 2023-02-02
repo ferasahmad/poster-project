@@ -8,13 +8,13 @@ const Create = () => {
 
   return (
     <p>
-      {/* {albums.map((album) => (
+      {albums.map((album) => (
         <img
-          src={album.image[3].#text}
+          src={album.image[3]["#text"]}
           alt=""
-          style={{ height: "40px", width: "40px" }}
+          style={{ height: "200px", width: "200px" }}
         />
-      ))} */}
+      ))}
     </p>
   );
 };
