@@ -23,6 +23,12 @@ const Search = () => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      handleOnClick();
+    }
+  };
+
   return (
     <Container>
       <Button onClick={handleOnClick}>
@@ -31,6 +37,7 @@ const Search = () => {
       <Input
         value={search}
         onChange={(event) => setSearch(event.target.value)}
+        onKeyDown={(event) => handleKeyDown(event)}
       />
     </Container>
   );
