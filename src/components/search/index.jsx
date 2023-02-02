@@ -1,15 +1,26 @@
 import { Container, Input, Button, Image } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { getAlbums } from "../../api";
 
 const Search = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     if (!search) return;
 
-    navigate("/create");
+    const albums = await returnGetAlbums();
+    navigate("/create", { state: { albums } });
+  };
+
+  const returnGetAlbums = async () => {
+    try {
+      const albums = await getAlbums(search);
+      return albums;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -23,7 +23,6 @@ export const P = styled.p`
 
 export const DescriptionAndSearch = styled.div`
   margin-bottom: 100px;
-  background: red;
   height: fit-content;
   display: flex;
   flex-direction: column;
