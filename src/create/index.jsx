@@ -1,4 +1,8 @@
 import { useLocation } from "react-router-dom";
+import Header from "../components/header";
+import { Container, AlbumsContainer } from "./styles";
+import Album from "../components/album";
+import Search from "../components/search";
 
 const Create = () => {
   const location = useLocation();
@@ -6,16 +10,18 @@ const Create = () => {
 
   console.log(albums);
 
+  const returnAlbums = () => {
+    return albums.map((albumInfo) => (
+      <Album key={albumInfo.name} info={albumInfo} />
+    ));
+  };
+
   return (
-    <p>
-      {albums.map((album) => (
-        <img
-          src={album.image[3]["#text"]}
-          alt=""
-          style={{ height: "200px", width: "200px" }}
-        />
-      ))}
-    </p>
+    <Container>
+      <Header />
+      <Search />
+      <AlbumsContainer>{returnAlbums()}</AlbumsContainer>
+    </Container>
   );
 };
 

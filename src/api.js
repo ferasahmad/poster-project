@@ -5,6 +5,8 @@ const returnApiUrl = () => {
 };
 
 export const getAlbums = async (album) => {
+  const ALBUMS_LIMIT = 20;
+
   try {
     const params = new URLSearchParams({
       method: "album.search",
@@ -15,7 +17,7 @@ export const getAlbums = async (album) => {
     const response = await fetch(`${returnApiUrl()}${params.toString()}`);
     const data = await response.json();
 
-    return data.results.albummatches.album.slice(0, 5);
+    return data.results.albummatches.album.slice(0, ALBUMS_LIMIT);
   } catch (error) {
     throw error;
   }
