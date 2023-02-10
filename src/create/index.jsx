@@ -1,14 +1,29 @@
-import { useLocation } from "react-router-dom";
 import Header from "../components/header";
 import { Container, AlbumsContainer } from "./styles";
 import Album from "../components/album";
 import Search from "../components/search";
+import { useEffect, useState } from "react";
+import { getAlbums } from "../api";
 
 const Create = () => {
-  const location = useLocation();
-  const { albums } = location.state;
+  const [albums, setAlbums] = useState([]);
+  const search = new URLSearchParams(window.location.search).get("search");
 
-  console.log(albums);
+  useEffect(() => {
+    if (!search) return;
+
+    handleGetAlbums(search);
+  }, []);
+
+  const handleGetAlbums = async (search) => {
+    try {
+      const albums = await getAlbums(search);
+
+      setAlbums(albums);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const returnAlbums = () => {
     return albums.map((albumInfo) => (
@@ -20,7 +35,9 @@ const Create = () => {
     <Container>
       <Header />
       <Search />
-      <AlbumsContainer>{returnAlbums()}</AlbumsContainer>
+      <AlbumsContainer>
+        {albums.length !== 0 ? returnAlbums() : <p>No results.</p>}
+      </AlbumsContainer>
     </Container>
   );
 };
