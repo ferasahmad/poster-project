@@ -10,3 +10,9 @@ export const HeaderContainer = styled.div`
 export const Logo = styled.img`
   height: 200px;
 `;
+
+export const Button = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
