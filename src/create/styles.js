@@ -19,3 +19,11 @@ export const AlbumsContainer = styled.div`
   gap: 33px;
   overflow-x: scroll;
 `;
+
+export const NoResults = styled.p`
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  font-family: DaysOne;
+`;

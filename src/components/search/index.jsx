@@ -1,31 +1,20 @@
 import { Container, Input, Button, Image } from "./styles";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
-const Search = () => {
-  const navigate = useNavigate();
-  const [search, setSearch] = useState("");
-
-  const handleOnClick = async () => {
-    if (!search) return;
-
-    navigate("/create?search=" + search);
-  };
-
+const Search = ({ value, onChange, onClick }) => {
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
-      handleOnClick();
+      onClick();
     }
   };
 
   return (
     <Container>
-      <Button onClick={handleOnClick}>
+      <Button onClick={onClick}>
         <Image src={"./search-icon.svg"} alt="" />
       </Button>
       <Input
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
         onKeyDown={(event) => handleKeyDown(event)}
       />
     </Container>
