@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Button onClick={onClick}>
-        <Logo src="./logo.svg" />
+        <Logo src="./assets/logo-with-text.svg" />
       </Button>
     </HeaderContainer>
   );

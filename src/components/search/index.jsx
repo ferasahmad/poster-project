@@ -10,7 +10,7 @@ const Search = ({ value, onChange, onClick }) => {
   return (
     <Container>
       <Button onClick={onClick}>
-        <Image src={"./search-icon.svg"} alt="" />
+        <Image src={"./assets/search-icon.svg"} alt="" />
       </Button>
       <Input
         value={value}

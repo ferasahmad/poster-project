@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  background-image: url("./create-background.svg");
+  background-image: url("./assets/create-background.svg");
   background-size: cover;
   flex-direction: column;
   height: 100%;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: flex-end;
   height: 100%;
-  background-image: url("./background-and-logo.svg");
+  background-image: url("./assets/background-and-logo.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
