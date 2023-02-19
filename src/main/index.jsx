@@ -18,6 +18,7 @@ const Main = () => {
       <DescriptionAndSearch>
         <P>Create a poster of your favorite artist!</P>
         <Search
+          autoFocus
           value={search}
           onChange={setSearch}
           onClick={onClickSearchButton}
