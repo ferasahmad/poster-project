@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   background-image: url("./background-2.svg");
+  background-attachment: fixed;
   background-size: cover;
   flex-direction: column;
-  height: 100%;
 `;
 
 export const AlbumAndPostersContainer = styled.div`
@@ -21,18 +21,6 @@ export const AlbumAndPostersContainer = styled.div`
   border: 3px solid #ffffff;
 `;
 
-export const AlbumContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 741px;
-  height: 254px;
-  filter: drop-shadow(0px 0px 15px #ffffff);
-  border-radius: 148.5px;
-  background: #000000;
-  margin-bottom: 70px;
-`;
-
 export const AlbumCover = styled.img`
   width: 212px;
   height: 212px;
@@ -42,11 +30,12 @@ export const AlbumCover = styled.img`
 `;
 
 export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   font-family: DaysOne;
   font-size: 15px;
+  gap: 25px;
 `;
-
-export const Info = styled.p``;
 
 export const PostersContainer = styled.div`
   display: flex;

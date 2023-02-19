@@ -1,6 +1,6 @@
 import Header from "../components/header";
 import { Container, AlbumsContainer, NoResults } from "./styles";
-import Album from "../components/album";
+import AlbumButton from "../components/album-button";
 import Search from "../components/search";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -33,7 +33,7 @@ const AlbumSearch = () => {
   const returnAlbums = () => {
     return albums.map((albumInfo) => {
       return (
-        <Album
+        <AlbumButton
           onClick={() =>
             navigate(
               `/poster-selection?albumName=${albumInfo.name}&artist=${albumInfo.artist}`

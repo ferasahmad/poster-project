@@ -1,6 +1,6 @@
 import { Button, Title, Cover } from "./styles";
 
-const Album = ({ info, onClick }) => {
+const AlbumButton = ({ info, onClick }) => {
   return (
     <Button onClick={onClick}>
       <Cover key={info.name} src={info.image[3]["#text"]} alt="" />
@@ -9,4 +9,4 @@ const Album = ({ info, onClick }) => {
   );
 };
 
-export default Album;
+export default AlbumButton;
