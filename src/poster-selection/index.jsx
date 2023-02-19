@@ -7,16 +7,19 @@ import {
   Poster,
 } from "./styles";
 import Search from "../components/search";
+import { useNavigate } from "react-router-dom";
 import AlbumInfo from "../components/album-info";
 import { getAlbum } from "../api";
 
 const PosterSelection = () => {
+  const navigate = useNavigate();
   const artist = new URLSearchParams(window.location.search).get("artist");
   const albumName = new URLSearchParams(window.location.search).get(
     "albumName"
   );
 
   const [album, setAlbum] = useState({});
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     if (!artist && !albumName) return;
@@ -34,10 +37,20 @@ const PosterSelection = () => {
     }
   };
 
+  const onClickSearchButton = () => {
+    if (!search) return;
+
+    navigate("/album-search?search=" + search);
+  };
+
   return (
     <Container>
       <Header />
-      <Search />
+      <Search
+        value={search}
+        onChange={setSearch}
+        onClick={onClickSearchButton}
+      />
       <AlbumAndPostersContainer>
         <AlbumInfo album={album} />
         <PostersContainer>
