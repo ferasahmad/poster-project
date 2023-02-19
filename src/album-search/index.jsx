@@ -6,13 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAlbums } from "../api";
 
-const Create = () => {
+const AlbumSearch = () => {
   const navigate = useNavigate();
   const [albums, setAlbums] = useState([]);
   const searchQueryParam = new URLSearchParams(window.location.search).get(
     "search"
   );
   const [search, setSearch] = useState(searchQueryParam);
+
+  console.log(albums);
 
   useEffect(() => {
     if (!search) return;
@@ -32,7 +34,17 @@ const Create = () => {
 
   const returnAlbums = () => {
     return albums.map((albumInfo) => {
-      return <Album key={albumInfo.name} info={albumInfo} />;
+      return (
+        <Album
+          onClick={() =>
+            navigate(
+              `/poster-selection?album=${albumInfo.name}&artist=${albumInfo.artist}`
+            )
+          }
+          key={albumInfo.name}
+          info={albumInfo}
+        />
+      );
     });
   };
 
@@ -40,7 +52,7 @@ const Create = () => {
     if (!search) return;
 
     setAlbums([]);
-    navigate("/create?search=" + search);
+    navigate("/album-search?search=" + search);
     handleGetAlbums();
   };
 
@@ -63,4 +75,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default AlbumSearch;

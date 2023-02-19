@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Button = styled.button`
   width: 161px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  color: #fff;
 `;
 
 export const Cover = styled.img`

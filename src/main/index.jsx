@@ -10,7 +10,7 @@ const Main = () => {
   const onClickSearchButton = () => {
     if (!search) return;
 
-    navigate("/create?search=" + search);
+    navigate("/album-search?search=" + search);
   };
 
   return (

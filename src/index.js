@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./main";
-import Create from "./create";
+import AlbumSearch from "./album-search";
+import PosterSelection from "./poster-selection";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +12,12 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   {
-    path: "/create",
-    element: <Create />,
+    path: "/album-search",
+    element: <AlbumSearch />,
+  },
+  {
+    path: "/poster-selection",
+    element: <PosterSelection />,
   },
 ]);
 

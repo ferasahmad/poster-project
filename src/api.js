@@ -22,3 +22,21 @@ export const getAlbums = async (album) => {
     throw error;
   }
 };
+
+export const getAlbum = async (artist, album) => {
+  try {
+    const params = new URLSearchParams({
+      method: "album.getInfo",
+      format: "json",
+      artist,
+      album,
+    });
+
+    const response = await fetch(`${returnApiUrl()}${params.toString()}`);
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

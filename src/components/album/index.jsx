@@ -1,11 +1,11 @@
-import { Container, Title, Cover } from "./styles";
+import { Button, Title, Cover } from "./styles";
 
-const Album = ({ info }) => {
+const Album = ({ info, onClick }) => {
   return (
-    <Container>
+    <Button onClick={onClick}>
       <Cover key={info.name} src={info.image[3]["#text"]} alt="" />
       <Title>{info.name}</Title>
-    </Container>
+    </Button>
   );
 };
 
