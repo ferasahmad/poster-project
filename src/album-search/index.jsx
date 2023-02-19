@@ -14,8 +14,6 @@ const AlbumSearch = () => {
   );
   const [search, setSearch] = useState(searchQueryParam);
 
-  console.log(albums);
-
   useEffect(() => {
     if (!search) return;
 
@@ -38,7 +36,7 @@ const AlbumSearch = () => {
         <Album
           onClick={() =>
             navigate(
-              `/poster-selection?album=${albumInfo.name}&artist=${albumInfo.artist}`
+              `/poster-selection?albumName=${albumInfo.name}&artist=${albumInfo.artist}`
             )
           }
           key={albumInfo.name}

@@ -35,7 +35,7 @@ export const getAlbum = async (artist, album) => {
     const response = await fetch(`${returnApiUrl()}${params.toString()}`);
     const data = await response.json();
 
-    return data;
+    return data.album;
   } catch (error) {
     throw error;
   }
