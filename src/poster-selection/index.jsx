@@ -4,12 +4,16 @@ import {
   Container,
   AlbumAndPostersContainer,
   PostersContainer,
-  Poster,
 } from "./styles";
 import Search from "../components/search";
 import { useNavigate } from "react-router-dom";
 import AlbumInfo from "../components/album-info";
 import { getAlbum } from "../api";
+import Poster1 from "../components/posters/poster-1";
+import Poster2 from "../components/posters/poster-2";
+import Poster3 from "../components/posters/poster-3";
+import Poster4 from "../components/posters/poster-4";
+import Poster5 from "../components/posters/poster-5";
 
 const PosterSelection = () => {
   const navigate = useNavigate();
@@ -20,6 +24,14 @@ const PosterSelection = () => {
 
   const [album, setAlbum] = useState({});
   const [search, setSearch] = useState("");
+
+  const posters = [
+    <Poster1 album={album} />,
+    <Poster2 album={album} />,
+    <Poster3 album={album} />,
+    <Poster4 album={album} />,
+    <Poster5 album={album} />,
+  ];
 
   useEffect(() => {
     if (!artist && !albumName) return;
@@ -54,14 +66,9 @@ const PosterSelection = () => {
       <AlbumAndPostersContainer>
         <AlbumInfo album={album} />
         <PostersContainer>
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
+          {posters.map((poster) => (
+            <div>{poster}</div>
+          ))}
         </PostersContainer>
       </AlbumAndPostersContainer>
     </Container>

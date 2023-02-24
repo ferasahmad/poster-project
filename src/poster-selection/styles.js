@@ -42,11 +42,3 @@ export const PostersContainer = styled.div`
   flex-wrap: wrap;
   gap: 67px;
 `;
-
-export const Poster = styled.div`
-  width: 163px;
-  height: 223px;
-  background: #000000;
-  box-shadow: 0px 0px 15px #0d3700;
-  border-radius: 10px;
-`;

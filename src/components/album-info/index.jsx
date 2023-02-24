@@ -10,7 +10,7 @@ import {
 const AlbumInfo = ({ album }) => {
   return (
     <Container>
-      <AlbumCover src={album.image && album.image[3]["#text"]} alt="album" />
+      <AlbumCover src={album.image} alt="album" />
       <InfoContainer>
         <Info>
           <Icon src="./assets/album.svg" />
