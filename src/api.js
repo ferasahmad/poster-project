@@ -44,8 +44,6 @@ export const getAlbum = async (artist, album) => {
     });
 
     const data = await request(params);
-    let albumData = data.album;
-    albumData.image = albumData.image[3]["#text"];
 
     return data.album;
   } catch (error) {
