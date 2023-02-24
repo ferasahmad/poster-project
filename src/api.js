@@ -45,8 +45,36 @@ export const getAlbum = async (artist, album) => {
 
     const data = await request(params);
 
-    return data.album;
+    const albumData = changeAlbumObject(data.album);
+
+    return albumData;
   } catch (error) {
     throw error;
   }
+};
+
+const changeAlbumObject = (albumInfo) => {
+  const albumTracks = albumInfo.tracks.track;
+  let newAlbumTracks = [];
+  let albumCover = "";
+
+  newAlbumTracks = albumTracks.map((track) => {
+    return {
+      name: track.name,
+      duration: track.duration,
+    };
+  });
+
+  for (const element of albumInfo.image) {
+    if (element) {
+      albumCover = element["#text"];
+    }
+  }
+
+  return {
+    name: albumInfo.name,
+    artist: albumInfo.artist,
+    tracks: newAlbumTracks,
+    image: albumCover,
+  };
 };
