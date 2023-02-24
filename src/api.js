@@ -25,9 +25,8 @@ export const getAlbums = async (album) => {
       album,
     });
 
-    const {
-      albummatches: { album: albums },
-    } = await request(params);
+    const { results } = await request(params);
+    const albums = results.albummatches.album;
 
     return albums.slice(0, ALBUMS_LIMIT);
   } catch (error) {
