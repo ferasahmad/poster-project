@@ -10,6 +10,41 @@
     url("/public/fonts/DotGothic16-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 400;
+  src: local("OpenSans-Regular"),
+    url("/public/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 500;
+  src: local("OpenSans-Medium"),
+    url("/public/fonts/OpenSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 600;
+  src: local("OpenSans-SemiBold"),
+    url("/public/fonts/OpenSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 700;
+  src: local("OpenSans-Bold"),
+    url("/public/fonts/OpenSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 800;
+  src: local("OpenSans-ExtraBold"),
+    url("/public/fonts/OpenSans-ExtraBold.ttf") format("truetype");
+}
+
 body {
   color: white;
   background-color: black;
