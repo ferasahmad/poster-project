@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 10px 0 10px;
+  padding: 25px 25px 0 25px;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -85,7 +85,7 @@ export const TracksContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
   height: 150px;
 `;
 
