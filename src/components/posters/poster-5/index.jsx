@@ -3,38 +3,31 @@ import {
   Cover,
   AlbumName,
   AlbumInfoContainer,
-  ArtistPhoto,
-  AlbumInfo,
-  ArtistName,
   IconsContainer,
   Icon,
   TracksContainer,
   Track,
-  TrackName,
-  HeartIcon,
   Controls,
   NowPlaying,
   AlbumCover,
   TrackInfo,
+  PlayIcon,
+  Gradient,
 } from "./styles";
 import PosterWrapper from "../../poster-wrapper";
 
 const Poster5 = ({ album }) => {
-  console.log("poster");
-  console.log(album);
-
   return (
     <PosterWrapper>
       <Container>
         <Cover src={album.image} />
         <AlbumName>{album.name}</AlbumName>
         <AlbumInfoContainer>
-          <ArtistPhoto />
-          <AlbumInfo>
-            <ArtistName>{album.artist}</ArtistName> •{" "}
+          <p>
+            <span>{album.artist}</span> •{" "}
             {new Date(album.releaseDate).getFullYear()} •{" "}
             {album.tracks && album.tracks.length}
-          </AlbumInfo>
+          </p>
         </AlbumInfoContainer>
         <IconsContainer>
           <div>
@@ -44,24 +37,24 @@ const Poster5 = ({ album }) => {
           </div>
           <div>
             <Icon src={"./assets/posters/poster1/shuffle.svg"} />
-            <Icon src={"./assets/posters/poster1/play.svg"} />
+            <PlayIcon src={"./assets/posters/poster1/play.svg"} />
           </div>
         </IconsContainer>
         <TracksContainer>
           {album.tracks &&
             album.tracks.map((track) => (
               <Track key={track.name}>
-                <TrackName>{track.name}</TrackName>
-                <HeartIcon src={"./assets/posters/poster1/heart.svg"} />
+                <p>{track.name}</p>
+                <img src={"./assets/posters/poster1/heart.svg"} alt="" />
               </Track>
             ))}
         </TracksContainer>
         <NowPlaying>
           <div>
-            <AlbumCover src={album.cover} />
+            <AlbumCover src={album.image} />
             <TrackInfo>
-              <TrackName>{album.tracks && album.tracks[0].name}</TrackName>
-              <ArtistName>{album.artist}</ArtistName>
+              <p>{album.tracks && album.tracks[0].name}</p>
+              <h2>{album.artist}</h2>
             </TrackInfo>
           </div>
           <Controls>
@@ -69,6 +62,7 @@ const Poster5 = ({ album }) => {
             <Icon src={"./assets/posters/poster1/pause.svg"} />
           </Controls>
         </NowPlaying>
+        <Gradient />
       </Container>
     </PosterWrapper>
   );
