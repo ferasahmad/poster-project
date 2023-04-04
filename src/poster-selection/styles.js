@@ -39,6 +39,8 @@ export const InfoContainer = styled.div`
 
 export const PostersContainer = styled.div`
   display: flex;
+  align-items: space-around;
+  justify-content: space-around;
+  gap: 75px;
   flex-wrap: wrap;
-  gap: 67px;
 `;
