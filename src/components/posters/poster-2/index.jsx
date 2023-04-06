@@ -10,10 +10,9 @@ import {
   Stars,
 } from "./styles";
 import PosterWrapper from "../../poster-wrapper";
-import { useEffect } from "react";
 
 const Poster2 = ({ album }) => {
-  const albumTracks = album.tracks.slice(0, 20);
+  const albumTracks = album.tracks && album.tracks.slice(0, 20);
 
   const formatTrackDuration = (durationInSeconds) => {
     const minutes = Math.floor(durationInSeconds / 60);
