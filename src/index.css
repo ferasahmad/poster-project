@@ -53,17 +53,17 @@
 }
 
 @font-face {
-  font-family: "BioRhyme";
+  font-family: "AbhayaLibre";
   font-weight: 400;
-  src: local("BioRhym-Regular"),
-    url("/public/fonts/BioRhyme-Regular.ttf") format("truetype");
+  src: local("AbhayaLibre-Regular"),
+    url("/public/fonts/AbhayaLibre-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "BioRhyme";
+  font-family: "SixCaps";
   font-weight: 400;
-  src: local("BioRhym-Regular"),
-    url("/public/fonts/BioRhyme-Regular.ttf") format("truetype");
+  src: local("SixCaps-Regular"),
+    url("/public/fonts/SixCaps-Regular.ttf") format("truetype");
 }
 
 body {
