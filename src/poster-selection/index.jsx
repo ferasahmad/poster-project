@@ -67,7 +67,7 @@ const PosterSelection = () => {
         <AlbumInfo album={album} />
         <PostersContainer>
           {posters.map((poster) => (
-            <div>{poster}</div>
+            <>{poster}</>
           ))}
         </PostersContainer>
       </AlbumAndPostersContainer>
