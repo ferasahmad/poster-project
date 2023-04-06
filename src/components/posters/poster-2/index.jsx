@@ -1,26 +1,69 @@
 import {
   Container,
-  Albumname,
+  TracksContainer,
+  Track,
   AlbumInfoContainer,
-  AlbumInfo,
-  ArtistName,
+  TrackName,
+  TrackNumber,
+  TrackDuration,
+  ReleaseDateAndTotal,
+  Stars,
 } from "./styles";
 import PosterWrapper from "../../poster-wrapper";
+import { useEffect } from "react";
 
 const Poster2 = ({ album }) => {
-  console.log("poster");
-  console.log(album);
+  const albumTracks = album.tracks.slice(0, 20);
+
+  const formatTrackDuration = (durationInSeconds) => {
+    const minutes = Math.floor(durationInSeconds / 60);
+    const seconds = durationInSeconds % 60;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const getAlbumDuration = () => {
+    let totalDuration = 0;
+    album.tracks &&
+      album.tracks.forEach((track) => {
+        totalDuration += track.duration;
+      });
+    return formatTrackDuration(totalDuration);
+  };
 
   return (
     <PosterWrapper>
       <Container>
-        <Albumname>{album.name}</Albumname>
         <AlbumInfoContainer>
-          <AlbumInfo>
-            <ArtistName>{album.artist}</ArtistName> •{" "}
-            {album.tracks && album.tracks.length}
-          </AlbumInfo>
+          <h1>{album.name}</h1>
+          <h2>{album.artist}</h2>
         </AlbumInfoContainer>
+        <TracksContainer>
+          <Track>
+            <TrackNumber>QTY</TrackNumber>
+            <TrackName>ITEM</TrackName>
+            <TrackDuration>AMT</TrackDuration>
+          </Track>
+          {albumTracks &&
+            albumTracks.map((track) => (
+              <Track key={track.id}>
+                <TrackNumber>{albumTracks.indexOf(track) + 1}</TrackNumber>
+                <TrackName>{track.name}</TrackName>
+                <TrackDuration>
+                  {formatTrackDuration(track.duration)}
+                </TrackDuration>
+              </Track>
+            ))}
+          <ReleaseDateAndTotal>
+            <Stars>
+              * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+            </Stars>
+            <p>DATE: {album.releaseDate}</p>
+            <p>TOTAL: {getAlbumDuration()}</p>
+            <Stars>
+              * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+            </Stars>
+          </ReleaseDateAndTotal>
+        </TracksContainer>
       </Container>
     </PosterWrapper>
   );

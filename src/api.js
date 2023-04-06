@@ -76,6 +76,6 @@ const changeAlbumObject = (albumInfo) => {
     artist: albumInfo.artist,
     tracks: newAlbumTracks,
     image: albumCover,
-    releaseDate: albumInfo.wiki.published,
+    releaseDate: albumInfo.wiki.published.split(",")[0],
   };
 };
