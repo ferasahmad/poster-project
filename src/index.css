@@ -45,6 +45,27 @@
     url("/public/fonts/OpenSans-ExtraBold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "BioRhyme";
+  font-weight: 400;
+  src: local("BioRhym-Regular"),
+    url("/public/fonts/BioRhyme-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BioRhyme";
+  font-weight: 400;
+  src: local("BioRhym-Regular"),
+    url("/public/fonts/BioRhyme-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BioRhyme";
+  font-weight: 400;
+  src: local("BioRhym-Regular"),
+    url("/public/fonts/BioRhyme-Regular.ttf") format("truetype");
+}
+
 body {
   color: white;
   background-color: black;
