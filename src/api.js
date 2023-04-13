@@ -26,7 +26,7 @@ export const getAlbums = async (album) => {
     });
 
     const { results } = await request(params);
-    const albums = results.albummatches.album;
+    const albums = transformAlbumsArray(results.albummatches.album);
 
     return albums.slice(0, ALBUMS_LIMIT);
   } catch (error) {
@@ -44,8 +44,7 @@ export const getAlbum = async (artist, album) => {
     });
 
     const data = await request(params);
-
-    const albumData = changeAlbumObject(data.album);
+    const albumData = transformAlbumObject(data.album);
 
     return albumData;
   } catch (error) {
@@ -53,7 +52,25 @@ export const getAlbum = async (artist, album) => {
   }
 };
 
-const changeAlbumObject = (albumInfo) => {
+const getAlbumCoverFromImageArray = (imagesArray) => {
+  return imagesArray[imagesArray.length - 1]["#text"];
+};
+
+const transformAlbumsArray = (albums) => {
+  let newAlbums = [];
+
+  albums.map((album) => {
+    newAlbums.push({
+      name: album.name,
+      artist: album.artist,
+      image: getAlbumCoverFromImageArray(album.image),
+    });
+  });
+
+  return newAlbums;
+};
+
+const transformAlbumObject = (albumInfo) => {
   const albumTracks = albumInfo.tracks.track;
   let newAlbumTracks = [];
   let albumCover = "";
@@ -65,17 +82,11 @@ const changeAlbumObject = (albumInfo) => {
     };
   });
 
-  for (const element of albumInfo.image) {
-    if (element) {
-      albumCover = element["#text"];
-    }
-  }
-
   return {
     name: albumInfo.name,
     artist: albumInfo.artist,
     tracks: newAlbumTracks,
-    image: albumCover,
-    releaseDate: albumInfo.wiki.published.split(",")[0],
+    image: getAlbumCoverFromImageArray(albumInfo.image),
+    // releaseDate: albumInfo.wiki.published.split(",")[0],
   };
 };

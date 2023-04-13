@@ -56,7 +56,7 @@ const Poster2 = ({ album }) => {
             <Stars>
               * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
             </Stars>
-            <p>DATE: {album.releaseDate}</p>
+            {/* <p>DATE: {album.releaseDate}</p> */}
             <p>TOTAL: {getAlbumDuration()}</p>
             <Stars>
               * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

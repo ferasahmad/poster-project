@@ -32,6 +32,10 @@ const AlbumSearch = () => {
 
   const returnAlbums = () => {
     return albums.map((albumInfo) => {
+      if (!albumInfo.image) {
+        return <></>;
+      }
+
       return (
         <AlbumButton
           onClick={() =>

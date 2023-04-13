@@ -4,6 +4,7 @@ import {
   Container,
   AlbumAndPostersContainer,
   PostersContainer,
+  LoadingContainer,
 } from "./styles";
 import Search from "../components/search";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ import Poster2 from "../components/posters/poster-2";
 import Poster3 from "../components/posters/poster-3";
 import Poster4 from "../components/posters/poster-4";
 import Poster5 from "../components/posters/poster-5";
+import { ColorRing } from "react-loader-spinner";
 
 const PosterSelection = () => {
   const navigate = useNavigate();
@@ -24,6 +26,7 @@ const PosterSelection = () => {
 
   const [album, setAlbum] = useState({});
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const posters = [
     <Poster1 album={album} />,
@@ -37,6 +40,7 @@ const PosterSelection = () => {
     if (!artist && !albumName) return;
 
     handleGetAlbum();
+    setLoading(false);
   }, []);
 
   const handleGetAlbum = async () => {
@@ -63,14 +67,29 @@ const PosterSelection = () => {
         onChange={setSearch}
         onClick={onClickSearchButton}
       />
-      <AlbumAndPostersContainer>
-        <AlbumInfo album={album} />
-        <PostersContainer>
-          {posters.map((poster) => (
-            <>{poster}</>
-          ))}
-        </PostersContainer>
-      </AlbumAndPostersContainer>
+      {loading ? (
+        <LoadingContainer>
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#4FFFB0", "#7b61ff", "#006A4E", "white", "#9400D3"]}
+          />
+          <p>Loading posters...</p>
+        </LoadingContainer>
+      ) : (
+        <AlbumAndPostersContainer>
+          <AlbumInfo album={album} />
+          <PostersContainer>
+            {posters.map((poster) => (
+              <>{poster}</>
+            ))}
+          </PostersContainer>
+        </AlbumAndPostersContainer>
+      )}
     </Container>
   );
 };

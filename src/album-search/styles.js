@@ -11,13 +11,15 @@ export const Container = styled.div`
 
 export const AlbumsContainer = styled.div`
   display: flex;
+  justify-content: center;
   background: #001600;
+  flex-wrap: wrap;
   width: 1000px;
+  height: fit-content;
   margin: 50px 193px;
   padding: 50px;
   border: 3px solid #ffffff;
-  gap: 33px;
-  overflow-x: scroll;
+  gap: 50px;
 `;
 
 export const NoResults = styled.p`

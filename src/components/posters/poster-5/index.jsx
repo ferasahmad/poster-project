@@ -25,7 +25,7 @@ const Poster5 = ({ album }) => {
         <AlbumInfoContainer>
           <p>
             <span>{album.artist}</span> •{" "}
-            {new Date(album.releaseDate).getFullYear()} •{" "}
+            {/* {new Date(album.releaseDate).getFullYear()} •{" "} */}
             {album.tracks && album.tracks.length}
           </p>
         </AlbumInfoContainer>

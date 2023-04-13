@@ -7,6 +7,15 @@ export const Container = styled.div`
   background-attachment: fixed;
   background-size: cover;
   flex-direction: column;
+  height: 100%;
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+  font-family: DaysOne;
 `;
 
 export const AlbumAndPostersContainer = styled.div`
