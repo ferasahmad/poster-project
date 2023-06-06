@@ -1,26 +1,41 @@
-import { Container, TracksContainer, Cover } from "./styles";
+import {
+  Container,
+  TracksContainer,
+  Cover,
+  Bottom,
+  ArtistContainer,
+} from "./styles";
 import PosterWrapper from "../../poster-wrapper";
 
 const Poster1 = ({ album }) => {
-  console.log(album);
-
   const returnTracks = (tracks) => {
     if (!tracks) return;
 
-    return tracks.map((track) => <p key={track.id}>{track.name}• </p>);
+    let tracksString = "";
+
+    tracks.map((track) => {
+      tracksString = tracksString + track.name + " • ";
+    });
+
+    return tracksString;
+  };
+
+  const returnAlbumName = (album) => {
+    if (album && album.name.length < 30) return <h1>{album.name}</h1>;
   };
 
   return (
     <PosterWrapper>
       <Container>
+        {returnAlbumName(album)}
         <Cover src={album.image} alt="" />
+        <ArtistContainer>
+          <h2>{album.artist}</h2>
+          <hr />
+        </ArtistContainer>
         <TracksContainer>{returnTracks(album.tracks)}</TracksContainer>
         <hr />
-        <div>
-          <img />
-          <img />
-          <img />
-        </div>
+        <Bottom src={"/assets/posters/poster1/bottom.svg"} />
       </Container>
     </PosterWrapper>
   );

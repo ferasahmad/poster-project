@@ -31,13 +31,13 @@ const Poster5 = ({ album }) => {
         </AlbumInfoContainer>
         <IconsContainer>
           <div>
-            <Icon src={"./assets/posters/poster1/heart.svg"} />
-            <Icon src={"./assets/posters/poster1/download.svg"} />
-            <Icon src={"./assets/posters/poster1/dots.svg"} />
+            <Icon src={"./assets/posters/poster5/heart.svg"} />
+            <Icon src={"./assets/posters/poster5/download.svg"} />
+            <Icon src={"./assets/posters/poster5/dots.svg"} />
           </div>
           <div>
-            <Icon src={"./assets/posters/poster1/shuffle.svg"} />
-            <PlayIcon src={"./assets/posters/poster1/play.svg"} />
+            <Icon src={"./assets/posters/poster5/shuffle.svg"} />
+            <PlayIcon src={"./assets/posters/poster5/play.svg"} />
           </div>
         </IconsContainer>
         <TracksContainer>
@@ -45,7 +45,7 @@ const Poster5 = ({ album }) => {
             album.tracks.map((track) => (
               <Track key={track.name}>
                 <p>{track.name}</p>
-                <img src={"./assets/posters/poster1/heart.svg"} alt="" />
+                <img src={"./assets/posters/poster5/heart.svg"} alt="" />
               </Track>
             ))}
         </TracksContainer>
@@ -58,8 +58,8 @@ const Poster5 = ({ album }) => {
             </TrackInfo>
           </div>
           <Controls>
-            <Icon src={"./assets/posters/poster1/device.svg"} />
-            <Icon src={"./assets/posters/poster1/pause.svg"} />
+            <Icon src={"./assets/posters/poster5/device.svg"} />
+            <Icon src={"./assets/posters/poster5/pause.svg"} />
           </Controls>
         </NowPlaying>
         <Gradient />

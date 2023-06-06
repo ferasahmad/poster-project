@@ -66,6 +66,20 @@
     url("/public/fonts/SixCaps-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "TulpenOne";
+  font-weight: 400;
+  src: local("TulpenOne-Regular"),
+    url("/public/fonts/TulpenOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bokor";
+  font-weight: 400;
+  src: local("Bokor-Regular"),
+    url("/public/fonts/Bokor-Regular.ttf") format("truetype");
+}
+
 body {
   color: white;
   background-color: black;
