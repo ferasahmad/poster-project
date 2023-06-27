@@ -7,20 +7,9 @@ import {
 } from "./styles";
 import PosterWrapper from "../../poster-wrapper";
 import returnAlbumName from "../../../utilities/returnAlbumName";
+import returnTracks from "../../../utilities/returnTracks";
 
 const Poster1 = ({ album }) => {
-  const returnTracks = (tracks) => {
-    if (!tracks) return;
-
-    let tracksString = "";
-
-    tracks.map((track) => {
-      tracksString = tracksString + track.name + " • ";
-    });
-
-    return tracksString;
-  };
-
   return (
     <PosterWrapper>
       <Container>
