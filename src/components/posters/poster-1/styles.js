@@ -5,13 +5,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
   padding: 0 20px 0 20px;
 
   h1 {
     font-size: 24px;
     font-family: Bokor;
     line-height: 35px;
-    margin: 10px 0 10px 0;
+    margin: 0 0 15px 0;
     white-space: nowrap;
     overflow: hidden;
     max-width: 30ch;
@@ -33,8 +34,8 @@ export const Container = styled.div`
 `;
 
 export const Cover = styled.img`
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
 `;
 
 export const Bottom = styled.img`

@@ -20,7 +20,8 @@ export const AlbumInfoContainer = styled.div`
   h1 {
     text-align: center;
     margin: 0;
-    font-size: 30px;
+    font-size: 25px;
+    padding: 0 35px;
     text-transform: uppercase;
     font-family: AbhayaLibre;
     color: #a80000;
@@ -28,6 +29,7 @@ export const AlbumInfoContainer = styled.div`
 
   h2 {
     margin: 0;
+    font-size: 20px;
     letter-spacing: 1px;
     font-weight: 400;
     font-family: SixCaps;

@@ -6,6 +6,7 @@ import {
   ArtistContainer,
 } from "./styles";
 import PosterWrapper from "../../poster-wrapper";
+import returnAlbumName from "../../../utilities/returnAlbumName";
 
 const Poster1 = ({ album }) => {
   const returnTracks = (tracks) => {
@@ -20,14 +21,10 @@ const Poster1 = ({ album }) => {
     return tracksString;
   };
 
-  const returnAlbumName = (album) => {
-    if (album && album.name.length < 30) return <h1>{album.name}</h1>;
-  };
-
   return (
     <PosterWrapper>
       <Container>
-        {returnAlbumName(album)}
+        {returnAlbumName(album.name)}
         <Cover src={album.image} alt="" />
         <ArtistContainer>
           <h2>{album.artist}</h2>
