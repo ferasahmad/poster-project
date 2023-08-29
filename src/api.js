@@ -44,6 +44,7 @@ export const getAlbum = async (artist, album) => {
     });
 
     const data = await request(params);
+    console.log(data);
     const albumData = transformAlbumObject(data.album);
 
     return albumData;
@@ -73,7 +74,6 @@ const transformAlbumsArray = (albums) => {
 const transformAlbumObject = (albumInfo) => {
   const albumTracks = albumInfo.tracks.track;
   let newAlbumTracks = [];
-  let albumCover = "";
 
   newAlbumTracks = albumTracks.map((track) => {
     return {
@@ -87,6 +87,7 @@ const transformAlbumObject = (albumInfo) => {
     artist: albumInfo.artist,
     tracks: newAlbumTracks,
     image: getAlbumCoverFromImageArray(albumInfo.image),
+    wiki: albumInfo.wiki,
     // releaseDate: albumInfo.wiki.published.split(",")[0],
   };
 };

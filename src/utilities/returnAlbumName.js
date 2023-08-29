@@ -1,7 +1,7 @@
-const returnAlbumName = (albumName) => {
+const returnAlbumName = (albumName, charLimit = 30) => {
   if (!albumName) return;
 
-  if (albumName.length < 30) return <h1>{albumName}</h1>;
+  if (albumName.length < charLimit) return <h1>{albumName}</h1>;
 };
 
 export default returnAlbumName;

@@ -15,7 +15,7 @@ import Poster2 from "../components/posters/poster-2";
 import Poster3 from "../components/posters/poster-3";
 import Poster4 from "../components/posters/poster-4";
 import Poster5 from "../components/posters/poster-5";
-import { ColorRing } from "react-loader-spinner";
+import { Rings } from "react-loader-spinner";
 
 const PosterSelection = () => {
   const navigate = useNavigate();
@@ -40,16 +40,19 @@ const PosterSelection = () => {
     if (!artist && !albumName) return;
 
     handleGetAlbum();
-    setLoading(false);
   }, []);
 
   const handleGetAlbum = async () => {
     try {
       const data = await getAlbum(artist, albumName);
 
+      console.log("data");
+      console.log(data);
       setAlbum(data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -69,16 +72,15 @@ const PosterSelection = () => {
       />
       {loading ? (
         <LoadingContainer>
-          <ColorRing
+          <Rings
             visible={true}
             height="80"
             width="80"
             ariaLabel="blocks-loading"
             wrapperStyle={{}}
             wrapperClass="blocks-wrapper"
-            colors={["#4FFFB0", "#7b61ff", "#006A4E", "white", "#9400D3"]}
+            color="#7b61ff"
           />
-          <p>Loading posters...</p>
         </LoadingContainer>
       ) : (
         <AlbumAndPostersContainer>
