@@ -17,6 +17,7 @@ const Poster4 = ({ album }) => {
         <Asset src="./assets/posters/poster4/record.svg" />
         <Asset src="./assets/posters/poster4/circle.svg" />
         <AlbumCover src={album.image} />
+
         <h1>{returnText()}</h1>
         <Circle />
       </Container>
