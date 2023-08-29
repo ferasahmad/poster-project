@@ -15,6 +15,7 @@ import Poster2 from "../components/posters/poster-2";
 import Poster3 from "../components/posters/poster-3";
 import Poster4 from "../components/posters/poster-4";
 import Poster5 from "../components/posters/poster-5";
+
 import { Rings } from "react-loader-spinner";
 
 const PosterSelection = () => {
